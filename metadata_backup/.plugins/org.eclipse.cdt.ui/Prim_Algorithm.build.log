@@ -1,0 +1,7 @@
+15:27:20 **** Incremental Build of configuration Debug for project Prim_Algorithm ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AdjacentList.o "..\\AdjacentList.cpp" 
+g++ -o Prim_Algorithm.exe AdjacentList.o main.o 
+
+15:27:22 Build Finished (took 1s.696ms)
+

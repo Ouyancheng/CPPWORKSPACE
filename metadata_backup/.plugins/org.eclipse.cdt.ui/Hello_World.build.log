@@ -1,0 +1,10 @@
+22:13:48 **** Incremental Build of configuration Debug for project Hello_World ****
+make all 
+Building file: ../src/Hello_World.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Hello_World.d" -MT"src/Hello_World.o" -o "src/Hello_World.o" "../src/Hello_World.cpp"
+g++.exe: error: CreateProcess: No such file or directory
+make: *** [src/Hello_World.o] Error 1
+
+22:13:49 Build Finished (took 389ms)
+

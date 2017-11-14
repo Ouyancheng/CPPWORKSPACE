@@ -1,0 +1,7 @@
+00:27:12 **** Incremental Build of configuration Debug for project Critical_Path_Method ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o OrthogonalList.o "..\\OrthogonalList.cpp" 
+g++ -o Critical_Path_Method.exe OrthogonalList.o main.o 
+
+00:27:14 Build Finished (took 1s.491ms)
+

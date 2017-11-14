@@ -1,0 +1,7 @@
+18:20:37 **** Incremental Build of configuration Debug for project Dijkstra_Algorithm ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AdjacentList.o "..\\AdjacentList.cpp" 
+g++ -o Dijkstra_Algorithm.exe AdjacentList.o main.o 
+
+18:20:38 Build Finished (took 1s.142ms)
+

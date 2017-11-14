@@ -1,0 +1,8 @@
+11:04:17 **** Incremental Build of configuration Debug for project Circular_Linklist_Implement_IM ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o CircularLinklist.o "..\\CircularLinklist.cpp" 
+g++ -o Circular_Linklist_Implement_IM.exe CircularLinklist.o main.o 
+
+11:04:18 Build Finished (took 1s.264ms)
+

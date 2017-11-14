@@ -1,0 +1,7 @@
+23:50:14 **** Incremental Build of configuration Debug for project Caesar_Alphabet_Chain ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Caesar_Alphabet_Chain.exe main.o 
+
+23:50:15 Build Finished (took 1s.174ms)
+

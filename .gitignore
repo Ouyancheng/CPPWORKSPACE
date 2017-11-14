@@ -1,0 +1,30 @@
+# macOS 
+.DS_Store
+
+# eclipse 
+.metadata/
+**/Debug/
+**/Release/
+**/.settings/
+**/.cproject 
+**/.project
+RemoteSystemsTempFiles/
+_.swp
+sc
+
+# clion
+**/.idea/
+**/cmake-build-debug/
+
+# 
+**/*.o
+**/*.exe
+**/*.obj
+
+# SingleFiles
+SingleFiles/*
+!SingleFiles/*.c
+!SingleFiles/*.cpp
+!SingleFiles/*.h
+!SingleFiles/*.hpp
+

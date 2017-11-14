@@ -1,0 +1,9 @@
+13:36:48 **** Rebuild of configuration Debug for project Topological_Sort ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AdjacentList.o "..\\AdjacentList.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Queue.o "..\\Queue.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Topological_Sort.exe AdjacentList.o Queue.o main.o 
+
+13:36:49 Build Finished (took 1s.750ms)
+

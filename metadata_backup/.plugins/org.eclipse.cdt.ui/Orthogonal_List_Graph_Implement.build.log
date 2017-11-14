@@ -1,0 +1,7 @@
+00:30:39 **** Incremental Build of configuration Debug for project Orthogonal_List_Graph_Implement ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Orthogonal_List_Graph_Implement.exe OrthogonalList.o main.o 
+
+00:30:40 Build Finished (took 1s.34ms)
+

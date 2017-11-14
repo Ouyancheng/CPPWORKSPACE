@@ -1,0 +1,37 @@
+/*
+ * Node.h
+ *
+ *  Created on: Aug 22, 2016
+ *      Author: ouyan
+ */
+
+#ifndef NODE_H_
+#define NODE_H_
+#include <string>
+using namespace std;
+struct edge
+{
+	unsigned int headindex;
+	unsigned int tailindex;
+
+	int weight;
+
+	edge *next;
+
+	edge(unsigned int headindex=0u,
+			unsigned int tailindex=0u,
+			int weight=0) :
+		headindex(headindex), tailindex(tailindex), weight(weight), next(NULL)
+	{
+	}
+};
+
+struct vertex
+{
+	string name;
+	edge *first;
+};
+
+
+
+#endif /* NODE_H_ */

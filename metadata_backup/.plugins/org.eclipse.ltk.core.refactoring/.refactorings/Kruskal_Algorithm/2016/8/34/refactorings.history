@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Create method Test" description="Extract Method Refactoring" fileName="file:/D:/CPPWORKSPACE/Kruskal_Algorithm/main.cpp" flags="4" id="org.eclipse.cdt.internal.ui.refactoring.extractfunction.ExtractFunctionRefactoring" name="Test" replaceDuplicates="false" selection="123,361" stamp="1471406209660" visibility="private"/>
+</session>

@@ -1,0 +1,8 @@
+01:26:58 **** Incremental Build of configuration Debug for project Binary_Tree_Show_Layer ****
+Info: Internal Builder is used for build
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o BinaryTree.o "..\\BinaryTree.cpp" 
+g++ -o Binary_Tree_Show_Layer.exe BinaryTree.o main.o 
+
+01:27:00 Build Finished (took 2s.63ms)
+

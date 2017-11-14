@@ -1,0 +1,12 @@
+23:13:37 **** Incremental Build of configuration Debug for project Sort_Class ****
+make all 
+Building file: ../Sort_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Sort_test.d" -MT"Sort_test.o" -o "Sort_test.o" "../Sort_test.cpp"
+Finished building: ../Sort_test.cpp
+ 
+Building target: Sort_Class.exe
+Invoking: MacOS X C++ Linker
+g++  -o "Sort_Class.exe"  ./Sort.o ./Sort_test.o   
+Finished building target: Sort_Class.exe
+ 

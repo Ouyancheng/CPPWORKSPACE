@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Create method text" description="Extract Method Refactoring" fileName="file:/D:/CPPWORKSPACE/Dijkstra_Algorithm/main.cpp" flags="4" id="org.eclipse.cdt.internal.ui.refactoring.extractfunction.ExtractFunctionRefactoring" name="text" replaceDuplicates="false" selection="144,625" stamp="1471509819636" visibility="private"/>
+</session>

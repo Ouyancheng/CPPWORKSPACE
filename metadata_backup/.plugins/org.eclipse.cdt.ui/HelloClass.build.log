@@ -1,0 +1,15 @@
+00:59:01 **** Incremental Build of configuration Debug for project HelloClass ****
+make all 
+Building file: ../main.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: HelloClass.exe
+Invoking: Cygwin C++ Linker
+g++  -o "HelloClass.exe"  ./Hello.o ./main.o   
+Finished building target: HelloClass.exe
+ 
+
+00:59:02 Build Finished (took 1s.173ms)
+

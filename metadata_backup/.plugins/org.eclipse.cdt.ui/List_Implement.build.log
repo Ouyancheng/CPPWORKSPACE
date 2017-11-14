@@ -1,0 +1,7 @@
+16:09:13 **** Incremental Build of configuration Debug for project List_Implement ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o mainExec.o "..\\mainExec.cpp" 
+g++ -o List_Implement.exe Vector.o mainExec.o 
+
+16:09:14 Build Finished (took 1s.38ms)
+

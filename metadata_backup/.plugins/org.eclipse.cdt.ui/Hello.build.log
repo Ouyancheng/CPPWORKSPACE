@@ -1,0 +1,7 @@
+00:24:28 **** Incremental Build of configuration Debug for project Hello ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o Hello.o "..\\Hello.cpp" 
+g++ -o Hello.exe Hello.o 
+
+00:24:29 Build Finished (took 597ms)
+

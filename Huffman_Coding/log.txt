@@ -1,0 +1,271 @@
+S 1
+! 1
+6 1
+4 1
+y 1
+2 1
+C 1
+: 2
+& 2
+N 2
+> 2
+I 3
+w 3
+m 3
+G 3
+, 3
+L 3
+O 3
+T 3
+| 4
+R 4
+" 4
+- 4
+# 4
+P 5
+K 5
+/ 6
+A 6
+H 6
+z 6
+p 7
+0 7
+M 8
+. 8
+1 9
+* 11
++ 11
+f 11
+_ 11
+b 11
+c 12
+{ 13
+} 13
+d 14
+h 14
+< 15
+o 15
+] 17
+( 17
+) 17
+x 17
+[ 17
+g 17
+j 18
+l 19
+u 20
+r 22
+a 23
+= 25
+s 31
+; 34
+t 60
+i 61
+n 63
+e 68
+
+ 81
+	 81
+  110
+Combined two nodes: S !
+The weight of the combined node is 2
+Inserted one node! Length: 67
+Combined two nodes: 6 4
+The weight of the combined node is 2
+Inserted one node! Length: 66
+Combined two nodes: y 2
+The weight of the combined node is 2
+Inserted one node! Length: 65
+Combined two nodes: C :
+The weight of the combined node is 3
+Inserted one node! Length: 64
+Combined two nodes: & N
+The weight of the combined node is 4
+Inserted one node! Length: 63
+Combined two nodes: > #
+The weight of the combined node is 4
+Inserted one node! Length: 62
+Combined two nodes: # #
+The weight of the combined node is 4
+Inserted one node! Length: 61
+Combined two nodes: I w
+The weight of the combined node is 6
+Inserted one node! Length: 60
+Combined two nodes: m G
+The weight of the combined node is 6
+Inserted one node! Length: 59
+Combined two nodes: , L
+The weight of the combined node is 6
+Inserted one node! Length: 58
+Combined two nodes: O T
+The weight of the combined node is 6
+Inserted one node! Length: 57
+Combined two nodes: # |
+The weight of the combined node is 7
+Inserted one node! Length: 56
+Combined two nodes: R "
+The weight of the combined node is 8
+Inserted one node! Length: 55
+Combined two nodes: - #
+The weight of the combined node is 8
+Inserted one node! Length: 54
+Combined two nodes: # #
+The weight of the combined node is 8
+Inserted one node! Length: 53
+Combined two nodes: # P
+The weight of the combined node is 9
+Inserted one node! Length: 52
+Combined two nodes: K /
+The weight of the combined node is 11
+Inserted one node! Length: 51
+Combined two nodes: A H
+The weight of the combined node is 12
+Inserted one node! Length: 50
+Combined two nodes: z #
+The weight of the combined node is 12
+Inserted one node! Length: 49
+Combined two nodes: # #
+The weight of the combined node is 12
+Inserted one node! Length: 48
+Combined two nodes: # p
+The weight of the combined node is 13
+Inserted one node! Length: 47
+Combined two nodes: 0 #
+The weight of the combined node is 14
+Inserted one node! Length: 46
+Combined two nodes: M .
+The weight of the combined node is 16
+Inserted one node! Length: 45
+Combined two nodes: # #
+The weight of the combined node is 16
+Inserted one node! Length: 44
+Combined two nodes: # 1
+The weight of the combined node is 17
+Inserted one node! Length: 43
+Combined two nodes: # *
+The weight of the combined node is 20
+Inserted one node! Length: 42
+Combined two nodes: + f
+The weight of the combined node is 22
+Inserted one node! Length: 41
+Combined two nodes: _ b
+The weight of the combined node is 22
+Inserted one node! Length: 40
+Combined two nodes: # c
+The weight of the combined node is 23
+Inserted one node! Length: 39
+Combined two nodes: # #
+The weight of the combined node is 24
+Inserted one node! Length: 38
+Combined two nodes: # {
+The weight of the combined node is 25
+Inserted one node! Length: 37
+Combined two nodes: } #
+The weight of the combined node is 26
+Inserted one node! Length: 36
+Combined two nodes: d h
+The weight of the combined node is 28
+Inserted one node! Length: 35
+Combined two nodes: # <
+The weight of the combined node is 29
+Inserted one node! Length: 34
+Combined two nodes: o #
+The weight of the combined node is 31
+Inserted one node! Length: 33
+Combined two nodes: # ]
+The weight of the combined node is 33
+Inserted one node! Length: 32
+Combined two nodes: ( )
+The weight of the combined node is 34
+Inserted one node! Length: 31
+Combined two nodes: x [
+The weight of the combined node is 34
+Inserted one node! Length: 30
+Combined two nodes: g #
+The weight of the combined node is 34
+Inserted one node! Length: 29
+Combined two nodes: j l
+The weight of the combined node is 37
+Inserted one node! Length: 28
+Combined two nodes: u #
+The weight of the combined node is 40
+Inserted one node! Length: 27
+Combined two nodes: r #
+The weight of the combined node is 44
+Inserted one node! Length: 26
+Combined two nodes: # a
+The weight of the combined node is 45
+Inserted one node! Length: 25
+Combined two nodes: # #
+The weight of the combined node is 47
+Inserted one node! Length: 24
+Combined two nodes: = #
+The weight of the combined node is 50
+Inserted one node! Length: 23
+Combined two nodes: # #
+The weight of the combined node is 54
+Inserted one node! Length: 22
+Combined two nodes: # s
+The weight of the combined node is 60
+Inserted one node! Length: 21
+Combined two nodes: # #
+The weight of the combined node is 64
+Inserted one node! Length: 20
+Combined two nodes: ; #
+The weight of the combined node is 68
+Inserted one node! Length: 19
+Combined two nodes: # #
+The weight of the combined node is 68
+Inserted one node! Length: 18
+Combined two nodes: # #
+The weight of the combined node is 77
+Inserted one node! Length: 17
+Combined two nodes: # #
+The weight of the combined node is 89
+Inserted one node! Length: 16
+Combined two nodes: # #
+The weight of the combined node is 97
+Inserted one node! Length: 15
+Combined two nodes: # t
+The weight of the combined node is 114
+Inserted one node! Length: 14
+Combined two nodes: # i
+The weight of the combined node is 121
+Inserted one node! Length: 13
+Combined two nodes: n #
+The weight of the combined node is 127
+Inserted one node! Length: 12
+Combined two nodes: e #
+The weight of the combined node is 136
+Inserted one node! Length: 11
+Combined two nodes: # #
+The weight of the combined node is 145
+Inserted one node! Length: 10
+Combined two nodes: 
+ 	
+The weight of the combined node is 162
+Inserted one node! Length: 9
+Combined two nodes: # #
+The weight of the combined node is 186
+Inserted one node! Length: 8
+Combined two nodes:   #
+The weight of the combined node is 224
+Inserted one node! Length: 7
+Combined two nodes: # #
+The weight of the combined node is 248
+Inserted one node! Length: 6
+Combined two nodes: # #
+The weight of the combined node is 281
+Inserted one node! Length: 5
+Combined two nodes: # #
+The weight of the combined node is 348
+Inserted one node! Length: 4
+Combined two nodes: # #
+The weight of the combined node is 472
+Inserted one node! Length: 3
+Combined two nodes: # #
+The weight of the combined node is 629
+Inserted one node! Length: 2
+Combined two nodes: # #
+The weight of the combined node is 1101
+Inserted one node! Length: 1

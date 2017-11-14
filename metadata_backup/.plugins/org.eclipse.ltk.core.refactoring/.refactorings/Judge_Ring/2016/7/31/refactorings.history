@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Create method JudgeRingpq" description="Extract Method Refactoring" fileName="file:/D:/CPPWORKSPACE/Judge_Ring/main.cpp" flags="4" id="org.eclipse.cdt.internal.ui.refactoring.extractfunction.ExtractFunctionRefactoring" name="JudgeRingpq" replaceDuplicates="false" selection="212,345" stamp="1469603602511" visibility="private"/>
+</session>

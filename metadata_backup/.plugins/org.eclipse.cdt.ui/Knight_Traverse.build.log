@@ -1,0 +1,7 @@
+15:59:29 **** Incremental Build of configuration Debug for project Knight_Traverse ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Knight_Traverse.exe main.o 
+
+15:59:30 Build Finished (took 1s.341ms)
+

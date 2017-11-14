@@ -1,0 +1,7 @@
+20:50:50 **** Incremental Build of configuration Debug for project Huffman_Coding ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Huffman_Coding.exe Linklist.o main.o 
+
+20:50:51 Build Finished (took 1s.298ms)
+

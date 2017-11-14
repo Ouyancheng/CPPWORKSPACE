@@ -1,0 +1,7 @@
+16:51:11 **** Incremental Build of configuration Debug for project Latin_Matrix ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Latin_Matrix.exe main.o 
+
+16:51:12 Build Finished (took 932ms)
+

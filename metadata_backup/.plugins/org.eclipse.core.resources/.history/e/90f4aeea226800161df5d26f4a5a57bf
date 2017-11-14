@@ -1,0 +1,39 @@
+/*
+ * AdjacentList.h
+ *
+ *  Created on: Aug 22, 2016
+ *      Author: ouyan
+ */
+
+#ifndef ADJACENTLIST_H_
+#define ADJACENTLIST_H_
+#include "Node.h"
+#include <queue>
+#include <stack>
+#include <vector>
+#include <iostream>
+using namespace std;
+class AdjacentList
+{
+public:
+	AdjacentList();
+	virtual ~AdjacentList();
+
+	void addVertex(const string &name);
+
+	void addEdge(const string &tailname,
+			const string &headname,
+			const int &weight);
+
+	void TopologicalSort();
+
+	void CriticalPathMethod();
+
+	friend ostream &operator <<(ostream &os, AdjacentList &al);
+
+private:
+	vector<vertex> a;
+
+};
+
+#endif /* ADJACENTLIST_H_ */

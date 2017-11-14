@@ -1,0 +1,7 @@
+16:09:10 **** Incremental Build of configuration Debug for project Queue_Implement ****
+Info: Internal Builder is used for build
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o Queue.o "..\\Queue.cpp" 
+g++ -o Queue_Implement.exe Queue.o main.o 
+
+16:09:13 Build Finished (took 2s.589ms)
+

@@ -1,0 +1,8 @@
+22:05:25 **** Incremental Build of configuration Debug for project Floyd_Algorithm ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AdjacentMatrix.o "..\\AdjacentMatrix.cpp" 
+g++ -o Floyd_Algorithm.exe AdjacentMatrix.o main.o 
+
+22:05:27 Build Finished (took 1s.842ms)
+

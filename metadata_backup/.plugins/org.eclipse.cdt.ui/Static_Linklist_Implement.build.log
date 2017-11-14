@@ -1,0 +1,8 @@
+15:52:20 **** Incremental Build of configuration Debug for project Static_Linklist_Implement ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o StaticLinklist.o "..\\StaticLinklist.cpp" 
+g++ -o Static_Linklist_Implement.exe StaticLinklist.o main.o 
+
+15:52:22 Build Finished (took 1s.335ms)
+

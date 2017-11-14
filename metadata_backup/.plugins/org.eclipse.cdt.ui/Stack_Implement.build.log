@@ -1,0 +1,7 @@
+15:10:53 **** Incremental Build of configuration Debug for project Stack_Implement ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Stack_Implement.exe Stack.o main.o 
+
+15:10:54 Build Finished (took 1s.47ms)
+

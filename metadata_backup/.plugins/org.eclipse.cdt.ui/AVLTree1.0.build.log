@@ -1,0 +1,6 @@
+12:27:28 **** Incremental Build of configuration Debug for project AVLTree1.0 ****
+Info: Internal Builder is used for build
+g++ -o AVLTree1.0.exe main.o 
+
+12:27:29 Build Finished (took 754ms)
+

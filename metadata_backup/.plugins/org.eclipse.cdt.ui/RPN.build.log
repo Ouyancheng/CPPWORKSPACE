@@ -1,0 +1,11 @@
+02:02:14 **** Incremental Build of configuration Debug for project RPN ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:34:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i=0;i<reverse_RPN.size();i++) {
+                ^
+g++ -o RPN.exe IntStack.o Stack.o main.o 
+
+02:02:20 Build Finished (took 5s.894ms)
+

@@ -1,0 +1,8 @@
+21:10:20 **** Incremental Build of configuration Debug for project Breadth_First_Search ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o AdjacentList.o "..\\AdjacentList.cpp" 
+g++ -o Breadth_First_Search.exe AdjacentList.o Queue.o main.o 
+
+21:10:22 Build Finished (took 1s.544ms)
+

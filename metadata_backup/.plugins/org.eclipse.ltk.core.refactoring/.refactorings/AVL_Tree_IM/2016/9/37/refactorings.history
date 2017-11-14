@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AVL_Tree_IM/AVLTree_test.cpp&apos; to &apos;AVLTree_test.hpp&apos;" description="Rename resource &apos;AVLTree_test.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="AVLTree_test.cpp" name="AVLTree_test.hpp" stamp="1473515735883" updateReferences="true"/>
+</session>
