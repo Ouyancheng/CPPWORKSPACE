@@ -68,13 +68,35 @@ int main(int argc, const char * argv[]) {
 		--riter;
 	}
 	putchar('\n');
+    
+    puts("Testing postorder iterator: ");
+    puts("Original: ");
+    rbt.postorder_traverse(print_rbtree_node, nullptr);
+    putchar('\n');
+    puts("Iterator: ");
+    RBTree::postorder_iterator_prototype postiter = rbt.postorder_begin();
+    while (!postiter.is_null()) {
+        printf("%ld ", *postiter);
+        ++postiter;
+    }
+    putchar('\n');
+    
+    puts("Testing postorder iterator 2: ");
+    puts("Iterator: ");
+    RBTree::postorder_iterator_prototype postiter2 = rbt2->postorder_end();
+    while (!postiter2.is_null()) {
+        printf("%ld ", *postiter2);
+        postiter2--;
+    }
+    putchar('\n');
+    
 	
-	/*RBTree::preorder_iterator_prototype piter = rbt.preorder_begin();
-	while (!piter.is_null()) {
-		printf("%ld ", *piter);
-		++piter;
-	}
-	putchar('\n');*/
+//    RBTree::preorder_iterator_prototype piter = rbt.preorder_begin();
+//    while (!piter.is_null()) {
+//        printf("%ld ", *piter);
+//        ++piter;
+//    }
+//    putchar('\n');
 	long version = __cplusplus;
 	printf("version: %ld\n", version);
 	delete rbt2;

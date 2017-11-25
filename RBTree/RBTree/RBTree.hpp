@@ -198,6 +198,76 @@ public:
 		node *p;
 		node *root;
 	};
+    
+    struct postorder_iterator_prototype {
+        bool is_null() { return p == nullptr; }
+        postorder_iterator_prototype(node *p) : p(p) {}
+        void increase() {
+            if (p->parent != nullptr) {
+                if (p == p->parent->left) {
+                    node *q = p->parent->right;
+                    if (q == nullptr) { p = p->parent; return; }
+                    while (q->left || q->right) {
+                        while (q->left) q = q->left;
+                        if (q->right) q = q->right;
+                    }
+                    p = q;
+                    return;
+                } else if (p == p->parent->right) {
+                    p = p->parent;
+                    return;
+                }
+            }
+            p = nullptr;
+            return;
+        }
+        
+        void decrease() {
+            if (p->parent != nullptr) {
+                if (p == p->parent->right) {
+                    node *q = p->parent->left;
+                    if (q == nullptr) { p = p->parent; return; }
+                    while (q->left || q->right) {
+                        while (q->right) q = q->right;
+                        if (q->left) q = q->left;
+                    }
+                    p = q;
+                    return;
+                } else if (p == p->parent->left) {
+                    p = p->parent;
+                    return;
+                }
+            }
+            p = nullptr;
+            return;
+        }
+        const data_t & operator *() const {
+            return p->data;
+        }
+        
+        postorder_iterator_prototype operator ++ (int) {
+            postorder_iterator_prototype temp = *this;
+            this->increase();
+            return temp;
+        }
+        postorder_iterator_prototype operator ++ () {
+            this->increase();
+            return *this;
+        }
+        postorder_iterator_prototype operator -- (int) {
+            postorder_iterator_prototype temp = *this;
+            this->decrease();
+            return temp;
+        }
+        postorder_iterator_prototype operator -- () {
+            this->decrease();
+            return *this;
+        }
+        
+    private:
+        node *p;
+    };
+    
 private:
 	void destroy_subtree(node *subroot) {
 		if (subroot) {
@@ -750,6 +820,24 @@ public:
 	iterator_prototype begin_prototype() const { return iterator_prototype(leftmost); }
 	iterator_prototype end_prototype() const { return iterator_prototype(rightmost); }
 	preorder_iterator_prototype preorder_begin() const { return preorder_iterator_prototype(root, root); }
+    postorder_iterator_prototype postorder_begin() const {
+        node *p = leftmost;
+        while (p->right) {
+            p = p->right;
+            while (p->left) p = p->left;
+        }
+        return postorder_iterator_prototype(p);
+    }
+    
+    postorder_iterator_prototype postorder_end() const {
+        node *p = rightmost;
+        while (p->left) {
+            p = p->left;
+            while (p->right) p = p->right;
+        }
+        return postorder_iterator_prototype(p);
+    }
+    
 	void inorder_traverse(void(*f)(const void *node_ptr, void *data_pack), void *data_pack) const {
 		inorder_traverse_base(root, f, data_pack);
 	}
