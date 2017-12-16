@@ -8,10 +8,6 @@
 
 #include <iostream>
 #include "RBTree.hpp"
-#include <emmintrin.h>
-#include <errno.h>
-#include <curses.h>
-#include <functional>
 void print_rbtree_node(const void *node_ptr, void *data_pack) {
 	printf("%ld ", ((RBTree::const_node_ptr_t)(node_ptr))->data);
 }

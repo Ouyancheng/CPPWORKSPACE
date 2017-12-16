@@ -9,22 +9,20 @@
 #ifndef RBTree_hpp
 #define RBTree_hpp
 
-#include <stdio.h>
+// #include <stdio.h>
 #include <queue>
+#include <iterator>
 
 class RBTree {
-	struct pair {
-		typedef long key_t;
-		typedef long value_t;
-		key_t key;
-		value_t value;
-		bool operator < (const pair &another) const { return (key < another.key); }
-		bool operator != (const pair &another) const { return (key < another.key || another.key < key); }
-		bool operator == (const pair &another) const { return !(key < another.key) && !(another.key < key); }
-		pair(const key_t &key = key_t(), const value_t &value = value_t()) : key(key), value(value) {}
-	};
 	typedef bool color_t;
 	typedef long data_t;
+    typedef data_t & reference;
+    typedef const data_t & const_reference;
+    typedef data_t * pointer;
+    typedef const data_t * const_pointer;
+    typedef size_t size_type;
+    typedef ptrdiff_t difference_type;
+    
 	static const color_t red = false;
 	static const color_t black = true;
 
@@ -51,87 +49,34 @@ class RBTree {
 		static inline color_t get_color(node *p) { return (p) ? (p->color) : (black); }
 		static inline void set_color(node *p, color_t color) { if (p) p->color = color; }
 	};
-	
-	struct slist_node {
-		node *p;
-		slist_node *next;
-	};
-
+    
 	node *root;
 	size_t node_count;
 	node *leftmost;
 	node *rightmost;
 public:
 	typedef const node *const const_node_ptr_t;
-	struct iterator_prototype {
+    struct iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
 		iterator_prototype(node *ptr) : p(ptr) {}
-		data_t operator *() const { return p->data; }
+		const data_t & operator *() const { return p->data; }
 		const data_t * operator -> () const { return &(p->data); }
 		bool is_null() const { return (!p); }
 		iterator_prototype operator ++ () {
-			if (!p) return *this;
-			if (p->right) {
-				p = p->right;
-				while (p->left != nullptr)
-					p = p->left;
-			} else {
-				node *parent = p->parent;
-				while (parent != nullptr && p == parent->right) {
-					p = parent;
-					parent = p->parent;
-				}
-				p = parent;
-			}
+            p = succ(p);
 			return *this;
 		}
 		iterator_prototype operator ++ (int) {
 			iterator_prototype temp = (*this);
-			if (!p) return temp;
-			if (p->right) {
-				p = p->right;
-				while (p->left != nullptr)
-					p = p->left;
-			} else {
-				node *parent = p->parent;
-				while (parent != nullptr && p == parent->right) {
-					p = parent;
-					parent = p->parent;
-				}
-				p = parent;
-			}
+            p = succ(p);
 			return temp;
 		}
 		iterator_prototype operator -- () {
-			if (!p) return *this;
-			if (p->left) {
-				p = p->left;
-				while (p->right)
-					p = p->right;
-			} else {
-				node *parent = p->parent;
-				while (parent != nullptr && p == parent->left) {
-					p = parent;
-					parent = p->parent;
-				}
-				p = parent;
-			}
+            p = pred(p);
 			return *this;
 		}
 		iterator_prototype operator -- (int) {
-			if (!p) return *this;
 			iterator_prototype temp = *this;
-			if (p->left) {
-				p = p->left;
-				while (p->right)
-					p = p->right;
-			} else {
-				node *parent = p->parent;
-				while (parent != nullptr && p == parent->left) {
-					p = parent;
-					parent = p->parent;
-				}
-				p = parent;
-			}
+            p = pred(p);
 			return temp;
 		}
 		static node * succ(node *p) {
@@ -169,8 +114,9 @@ public:
 	private:
 		node *p;
 	};
-	struct preorder_iterator_prototype {
-		bool is_null() { return (p == nullptr); }
+    
+    struct preorder_iterator_prototype : std::iterator<std::forward_iterator_tag, data_t> {
+		bool is_null() const { return (p == nullptr); }
 		preorder_iterator_prototype(node *p, node *root) : p(p), root(root) {}
 		preorder_iterator_prototype operator ++ () {
 			if (!p) return *this;
@@ -191,16 +137,17 @@ public:
 			}
 			return *this;
 		}
-		data_t operator * () {
-			return p->data;
-		}
+		const data_t & operator * () const { return p->data; }
+        const data_t * operator -> () const { return &(p->data); }
 	private:
 		node *p;
 		node *root;
 	};
     
-    struct postorder_iterator_prototype {
-        bool is_null() { return p == nullptr; }
+    struct postorder_iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
+        bool is_null() const { return p == nullptr; }
+        const data_t & operator *() const { return p->data; }
+        const data_t * operator ->() const { return &(p->data); }
         postorder_iterator_prototype(node *p) : p(p) {}
         void increase() {
             if (p->parent != nullptr) {
@@ -241,9 +188,6 @@ public:
             p = nullptr;
             return;
         }
-        const data_t & operator *() const {
-            return p->data;
-        }
         
         postorder_iterator_prototype operator ++ (int) {
             postorder_iterator_prototype temp = *this;
@@ -269,7 +213,7 @@ public:
     };
     
 private:
-	void destroy_subtree(node *subroot) {
+	void destroy_subtree(node *subroot) const {
 		if (subroot) {
 			destroy_subtree(subroot->left);
 			destroy_subtree(subroot->right);
@@ -620,16 +564,16 @@ private:
 					parent->color = red;
 					auto_left_rotate(parent);
 					brother = parent->right;
-				} else if (node::get_color(brother->left) == black &&
-						   node::get_color(brother->right) == black) {
+				} else if (/* node::get_color(brother->left) == black &&
+						   node::get_color(brother->right) == black */ brother->left->color == black && brother->right->color == black) {
 					/**
 					 * Case 2: x is black + black and the color of the brother is black and its two children are black.
 					 */
 					brother->color = red;
 					x = parent;
 					parent = x->parent;
-				} else if (node::get_color(brother->left) == red &&
-						   node::get_color(brother) == black) {
+				} else if (/* node::get_color(brother->left) == red &&
+                            node::get_color(brother) == black */ brother->left->color == red) {
 					/**
 					 * Case 3: x is black + black and
 					 * the color of the brother is black and its two children are left red right black.
@@ -671,17 +615,17 @@ private:
 					parent->color = red;
 					auto_right_rotate(parent);
 					brother = parent->left;
-				} else if (node::get_color(brother->left) == black &&
-						   node::get_color(brother->right) == black) {
+				} else if (/* node::get_color(brother->left) == black &&
+						   node::get_color(brother->right) == black */ brother->left->color == black && brother->right->color == black) {
 					// Case 2: x is black + black and the color of the brother is black and its two children are black.
 					brother->color = red;
 					x = parent;
 					parent = x->parent;
-				} else if (node::get_color(brother->right) == red &&
-						   node::get_color(brother) == black) {
+				} else if (/* node::get_color(brother->right) == red &&
+						   node::get_color(brother) == black */ brother->right->color == red) {
 					/*
 					 * Case 3: x is black + black and
-					 * the color of the brother is black and its two children are left red right black.
+					 * the color of the brother is black and its two children are right red left black.
 					 */
 					brother->right->color = black;
 					brother->color = red;
@@ -814,7 +758,7 @@ public:
 		return true;
 	}
 	
-	iterator_prototype find(const data_t &data) { return iterator_prototype(find_subtree(root, data)); }
+	iterator_prototype find(const data_t &data) const { return iterator_prototype(find_subtree(root, data)); }
 	
 	size_t size() const { return node_count; }
 	iterator_prototype begin_prototype() const { return iterator_prototype(leftmost); }
@@ -885,122 +829,6 @@ public:
 	}
 	
 };
-
-/*
- 
- // TODO
-	void rebalance_for_remove(node *parent, bool p_on_left) {
- *
- * Note that if we jump into this function, color of the node to be deleted must be black.
- * Otherwise we are done... The case has been discussed in the remove method.
- *
-node *n = (p_on_left) ? (parent->left) : (parent->right);
-if (node::get_color(n) == red) {
-	node::set_color(n, black);
-	return;
-}
-*
- * We know that we are to delete a black node.
- * The pointer n is the new node to replace position of p.
- * If n is red, n shouldn't be null and we can just flip n's color to satisfy the condition.
- *
- * After these two situations, the assumption of the remaining conditions will be:
- * n is black (or null);
- * The node to be deleted, p, is black.
- *
-*
- * Note that if p is black and n is black (or null),
- * the sibling of p shouldn't be null for the property of red-black-tree.
- * Otherwise, the black nodes are not equal.
- *
-node *sibling = (p_on_left) ? (parent->right) : (parent->left);
-if (parent->color == red &&
-	sibling->color == black &&
-	node::get_color(sibling->left) == black &&
-	node::get_color(sibling->right) == black) {
-	parent->color = black;
-	sibling->color = red;
-	// break the loop
-}
-*
- *
-if (p_on_left && sibling->color == black && node::get_color(sibling->right) == red) {
-	
-} else if (!p_on_left && sibling->color == black && node::get_color(sibling->left) == red) {
-	
-}
-
-}
-
- */
-
-/*if (!p) return false;
- if (!(p->left) || !(p->right)) {
- node *pchild = (p->left) ? (p->left) : (p->right);
- if (p == root) {
- root = pchild;
- if (root) root->parent = nullptr;
- node::set_color(root, black);
- delete p;
- --node_count;
- return true;
- }
- // Pointer p is not root after that.
- bool p_on_left = (p == p->parent->left);
- if (p_on_left) {
- p->parent->left = pchild;
- if (pchild) pchild->parent = p->parent;
- } else {
- p->parent->right = pchild;
- if (pchild) pchild->parent = p->parent;
- }
- if (p->color == black) {
- rebalance_for_remove(pchild, p_on_left);
- }
- delete p;
- --node_count;
- } else {
- node *q = (p->right);
- while (q->left) q = q->left;
- data_t temp = p->data;
- p->data = q->data;
- q->data = temp;
- remove_ptr(q);
- }*/
-
-/*if (!(p->left) && !(p->right)) {
- node *&c = (p == p->parent->left) ? (p->parent->left) : (p->parent->right);
- if (p->color == black) {
- rebalance_for_remove(c);
- }
- // remove p
- delete p;
- c = nullptr;
- --node_count;
- } else if (!(p->left) && (p->right)) {
- node *&c = (p == p->parent->left) ? (p->parent->left) : (p->parent->right);
- c = p->right;
- p->right->parent = p->parent;
- if (p->color == black)
- rebalance_for_remove(c);
- // remove p
- delete p;
- c = nullptr;
- --node_count;
- 
- } else if ((p->left) && !(p->right)) {
- node *&c = (p == p->parent->left) ? (p->parent->left) : (p->parent->right);
- c = p->left;
- p->left->parent = p->parent;
- if (p->color == black)
- rebalance_for_remove(c);
- // remove p
- delete p;
- c = nullptr;
- --node_count;
- 
- }*/
-
 
 
 #endif /* RBTree_hpp */

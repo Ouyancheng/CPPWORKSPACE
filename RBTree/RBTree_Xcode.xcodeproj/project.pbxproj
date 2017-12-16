@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1450824E1FE4ED1C00E5291D /* UnusedCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnusedCode.h; sourceTree = "<group>"; };
 		145BA8C01F2F4AD700F7C285 /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
 		145BA8C21F2F4B5B00F7C285 /* libncurses.5.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.5.4.tbd; path = usr/lib/libncurses.5.4.tbd; sourceTree = SDKROOT; };
 		14E77E801F20A65A00A78114 /* RBTree_Xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RBTree_Xcode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +80,7 @@
 				14E77E831F20A65A00A78114 /* main.cpp */,
 				14E77E8A1F20A66A00A78114 /* RBTree.cpp */,
 				14E77E8B1F20A66A00A78114 /* RBTree.hpp */,
+				1450824E1FE4ED1C00E5291D /* UnusedCode.h */,
 			);
 			path = RBTree;
 			sourceTree = "<group>";
