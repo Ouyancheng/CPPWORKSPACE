@@ -16,13 +16,13 @@
 class RBTree {
 	typedef bool color_t;
 	typedef long data_t;
-    typedef data_t & reference;
-    typedef const data_t & const_reference;
-    typedef data_t * pointer;
-    typedef const data_t * const_pointer;
-    typedef size_t size_type;
-    typedef ptrdiff_t difference_type;
-    
+	typedef data_t & reference;
+	typedef const data_t & const_reference;
+	typedef data_t * pointer;
+	typedef const data_t * const_pointer;
+	typedef size_t size_type;
+	typedef ptrdiff_t difference_type;
+	
 	static const color_t red = false;
 	static const color_t black = true;
 
@@ -49,34 +49,34 @@ class RBTree {
 		static inline color_t get_color(node *p) { return (p) ? (p->color) : (black); }
 		static inline void set_color(node *p, color_t color) { if (p) p->color = color; }
 	};
-    
+	
 	node *root;
 	size_t node_count;
 	node *leftmost;
 	node *rightmost;
 public:
 	typedef const node *const const_node_ptr_t;
-    struct iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
+	struct iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
 		iterator_prototype(node *ptr) : p(ptr) {}
 		const data_t & operator *() const { return p->data; }
 		const data_t * operator -> () const { return &(p->data); }
 		bool is_null() const { return (!p); }
 		iterator_prototype operator ++ () {
-            p = succ(p);
+			p = succ(p);
 			return *this;
 		}
 		iterator_prototype operator ++ (int) {
 			iterator_prototype temp = (*this);
-            p = succ(p);
+			p = succ(p);
 			return temp;
 		}
 		iterator_prototype operator -- () {
-            p = pred(p);
+			p = pred(p);
 			return *this;
 		}
 		iterator_prototype operator -- (int) {
 			iterator_prototype temp = *this;
-            p = pred(p);
+			p = pred(p);
 			return temp;
 		}
 		static node * succ(node *p) {
@@ -114,8 +114,8 @@ public:
 	private:
 		node *p;
 	};
-    
-    struct preorder_iterator_prototype : std::iterator<std::forward_iterator_tag, data_t> {
+	
+	struct preorder_iterator_prototype : std::iterator<std::forward_iterator_tag, data_t> {
 		bool is_null() const { return (p == nullptr); }
 		preorder_iterator_prototype(node *p, node *root) : p(p), root(root) {}
 		preorder_iterator_prototype operator ++ () {
@@ -138,80 +138,80 @@ public:
 			return *this;
 		}
 		const data_t & operator * () const { return p->data; }
-        const data_t * operator -> () const { return &(p->data); }
+		const data_t * operator -> () const { return &(p->data); }
 	private:
 		node *p;
 		node *root;
 	};
-    
-    struct postorder_iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
-        bool is_null() const { return p == nullptr; }
-        const data_t & operator *() const { return p->data; }
-        const data_t * operator ->() const { return &(p->data); }
-        postorder_iterator_prototype(node *p) : p(p) {}
-        void increase() {
-            if (p->parent != nullptr) {
-                if (p == p->parent->left) {
-                    node *q = p->parent->right;
-                    if (q == nullptr) { p = p->parent; return; }
-                    while (q->left || q->right) {
-                        while (q->left) q = q->left;
-                        if (q->right) q = q->right;
-                    }
-                    p = q;
-                    return;
-                } else if (p == p->parent->right) {
-                    p = p->parent;
-                    return;
-                }
-            }
-            p = nullptr;
-            return;
-        }
-        
-        void decrease() {
-            if (p->parent != nullptr) {
-                if (p == p->parent->right) {
-                    node *q = p->parent->left;
-                    if (q == nullptr) { p = p->parent; return; }
-                    while (q->left || q->right) {
-                        while (q->right) q = q->right;
-                        if (q->left) q = q->left;
-                    }
-                    p = q;
-                    return;
-                } else if (p == p->parent->left) {
-                    p = p->parent;
-                    return;
-                }
-            }
-            p = nullptr;
-            return;
-        }
-        
-        postorder_iterator_prototype operator ++ (int) {
-            postorder_iterator_prototype temp = *this;
-            this->increase();
-            return temp;
-        }
-        postorder_iterator_prototype operator ++ () {
-            this->increase();
-            return *this;
-        }
-        postorder_iterator_prototype operator -- (int) {
-            postorder_iterator_prototype temp = *this;
-            this->decrease();
-            return temp;
-        }
-        postorder_iterator_prototype operator -- () {
-            this->decrease();
-            return *this;
-        }
-        
-    private:
-        node *p;
-    };
-    
+	
+	struct postorder_iterator_prototype : std::iterator<std::bidirectional_iterator_tag, data_t> {
+		bool is_null() const { return p == nullptr; }
+		const data_t & operator *() const { return p->data; }
+		const data_t * operator ->() const { return &(p->data); }
+		postorder_iterator_prototype(node *p) : p(p) {}
+		void increase() {
+			if (p->parent != nullptr) {
+				if (p == p->parent->left) {
+					node *q = p->parent->right;
+					if (q == nullptr) { p = p->parent; return; }
+					while (q->left || q->right) {
+						while (q->left) q = q->left;
+						if (q->right) q = q->right;
+					}
+					p = q;
+					return;
+				} else if (p == p->parent->right) {
+					p = p->parent;
+					return;
+				}
+			}
+			p = nullptr;
+			return;
+		}
+		
+		void decrease() {
+			if (p->parent != nullptr) {
+				if (p == p->parent->right) {
+					node *q = p->parent->left;
+					if (q == nullptr) { p = p->parent; return; }
+					while (q->left || q->right) {
+						while (q->right) q = q->right;
+						if (q->left) q = q->left;
+					}
+					p = q;
+					return;
+				} else if (p == p->parent->left) {
+					p = p->parent;
+					return;
+				}
+			}
+			p = nullptr;
+			return;
+		}
+		
+		postorder_iterator_prototype operator ++ (int) {
+			postorder_iterator_prototype temp = *this;
+			this->increase();
+			return temp;
+		}
+		postorder_iterator_prototype operator ++ () {
+			this->increase();
+			return *this;
+		}
+		postorder_iterator_prototype operator -- (int) {
+			postorder_iterator_prototype temp = *this;
+			this->decrease();
+			return temp;
+		}
+		postorder_iterator_prototype operator -- () {
+			this->decrease();
+			return *this;
+		}
+		
+	private:
+		node *p;
+	};
+	
 private:
 	void destroy_subtree(node *subroot) const {
 		if (subroot) {
@@ -573,7 +573,7 @@ private:
 					x = parent;
 					parent = x->parent;
 				} else if (/* node::get_color(brother->left) == red &&
-                            node::get_color(brother) == black */ brother->left->color == red) {
+							node::get_color(brother) == black */ brother->left->color == red) {
 					/**
 					 * Case 3: x is black + black and
 					 * the color of the brother is black and its two children are left red right black.
@@ -764,24 +764,24 @@ public:
 	iterator_prototype begin_prototype() const { return iterator_prototype(leftmost); }
 	iterator_prototype end_prototype() const { return iterator_prototype(rightmost); }
 	preorder_iterator_prototype preorder_begin() const { return preorder_iterator_prototype(root, root); }
-    postorder_iterator_prototype postorder_begin() const {
-        node *p = leftmost;
-        while (p->right) {
-            p = p->right;
-            while (p->left) p = p->left;
-        }
-        return postorder_iterator_prototype(p);
-    }
-    
-    postorder_iterator_prototype postorder_end() const {
-        node *p = rightmost;
-        while (p->left) {
-            p = p->left;
-            while (p->right) p = p->right;
-        }
-        return postorder_iterator_prototype(p);
-    }
-    
+	postorder_iterator_prototype postorder_begin() const {
+		node *p = leftmost;
+		while (p->right) {
+			p = p->right;
+			while (p->left) p = p->left;
+		}
+		return postorder_iterator_prototype(p);
+	}
+	
+	postorder_iterator_prototype postorder_end() const {
+		node *p = rightmost;
+		while (p->left) {
+			p = p->left;
+			while (p->right) p = p->right;
+		}
+		return postorder_iterator_prototype(p);
+	}
+	
 	void inorder_traverse(void(*f)(const void *node_ptr, void *data_pack), void *data_pack) const {
 		inorder_traverse_base(root, f, data_pack);
 	}
