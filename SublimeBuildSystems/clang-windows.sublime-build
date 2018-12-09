@@ -1,0 +1,19 @@
+{
+	"cmd": ["clang", "-std=c11", "-Wall", "${file}", "-o","${file_path}/${file_base_name}.exe"],
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:?(.*)$",
+	"working_dir": "${file_path}",
+	"encoding": "utf-8",
+	//"encoding": "cp936",
+	"selector": "source.c",
+	"variants":
+	[
+		{
+			"name": "Run in internal window",
+			"cmd": ["cmd", "/c", "clang -std=c11 -Wall ${file} -o ${file_path}/${file_base_name}.exe && ${file_base_name}.exe"]
+		},
+		{
+			"name": "Run in new window",
+			"cmd": ["cmd", "/C", "start", "cmd", "/c", "clang -std=c11 -Wall ${file} -o ${file_path}/${file_base_name}.exe && ${file_path}/${file_base_name}.exe & pause"]
+		}
+	]
+}
